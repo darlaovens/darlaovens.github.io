@@ -14,68 +14,57 @@
             color: #F5F5DC;
             background: url('lux1.jpg') no-repeat center center fixed;
             background-size: cover;
-            height: auto; /* Ensure the body height adjusts dynamically */
-            overflow-y: auto; /* Enable vertical scrolling */
+            height: auto;
+            overflow-y: auto;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
         }
         header {
-            text-align: right;
-            padding: 80px 0 40px;
+            text-align: left;
+            padding: 20px 0;
         }
         header h1 {
-            font-family: 'Playfair Display', serif;
-            margin: 0 0 0 40px;
-            font-size: 3.5em;
+            font-size: 3em;
             font-weight: 700;
             color: #F4E4BC;
-            text-align: left;
+            margin-left: 20px;
+            margin-top: 100px; /* Move the name 100px down */
         }
         nav {
-            text-align: right;
-            padding: 20px 0;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
         nav a {
             text-decoration: none;
             color: #F5F5DC;
-            margin: 0 25px;
+            margin: 0 10px;
             font-size: 0.8em;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
         }
         main {
             padding: 40px 0;
             display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             gap: 40px;
         }
         #contact-intro {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
-            background: rgba(30,30,30,0.5);
+            background: rgba(30, 30, 30, 0.5); /* More transparent background */
             color: #F5F5DC;
             border-radius: 16px;
-            min-width: 320px;
-            margin: 0 auto 40px auto;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-            padding: 32px 24px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.147);
+            max-width: 800px; /* Increased width */
+            margin-left: 920px; /* Moved 920px to the right */
         }
         #contact-intro h2 {
-            font-size: 2.2em;
+            font-size: 2em;
             font-family: 'Playfair Display', serif;
             color: #F4E4BC;
             font-weight: 700;
@@ -84,26 +73,19 @@
             letter-spacing: 0.05em;
         }
         #contact-intro p {
-            font-size: 1.1em;
+            font-size: 1em;
             color: #F5F5DC;
             margin: 0;
             text-align: center;
         }
         #contact-form {
-            flex: 1;
-            padding: 40px 0;
-            text-align: right;
-            background: rgba(255,255,255,0.10);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            min-width: 350px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-            margin-right: 10px;
-            margin-left: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto; /* Center the form */
         }
         #contact-form h2 {
             text-align: center;
@@ -114,24 +96,18 @@
             margin-bottom: 30px;
         }
         #contact-form form {
-            max-width: 450px;
-            width: 100%;
-            padding: 0 24px;
-            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             gap: 15px;
-            align-items: stretch;
         }
         #contact-form input, #contact-form textarea {
             padding: 12px;
             border: 1px solid #ddd;
-            font-family: 'Montserrat', sans-serif;
-            background: rgba(255,255,255,0.7);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
             color: #222;
             font-size: 1em;
             width: 100%;
-            box-sizing: border-box;
         }
         #contact-form textarea {
             resize: vertical;
@@ -140,6 +116,7 @@
         #contact-form button {
             padding: 12px;
             border: none;
+            border-radius: 8px;
             background-color: #cfd29c;
             color: #fff;
             cursor: pointer;
@@ -150,55 +127,36 @@
         }
         #contact-form button:hover {
             background: #444;
-            transform: translateX(-10px);
+            transform: translateY(-3px);
         }
         #social-media {
-            width: 100%;
-            background: none;
-            text-align: right; /* Align content to the right */
+            text-align: center;
             margin-top: 30px;
         }
         #social-media h2 {
             font-size: 1.3em;
             color: #F4E4BC;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
             margin-bottom: 18px;
-            display: block; /* Ensure it is visible */
-            text-align: right; /* Align to the right */
-            opacity: 1; /* Make it fully visible */
-            animation: none; /* Remove animation for visibility */
-            position: relative; /* Enable positioning */
-            right: 150px; /* Move 20px to the left */
         }
         .social-links {
-            text-align: right; /* Ensure icons are aligned to the right */
-            position: relative; /* Enable positioning */
-            right: 120px; /* Move icons 150px to the left */
+            display: flex;
+            justify-content: center; /* Center the icons */
+            gap: 20px;
         }
         .social-links a {
-            margin: 0 10px;
             text-decoration: none;
-            color: #F5F5DC;
-            font-size: 2em;
-            background: none;
-            padding: 0;
-            border-radius: 0;
-            transition: color 0.3s, transform 0.3s;
             display: inline-block;
-            vertical-align: middle;
         }
-        .social-links a:hover {
-            color: #F4E4BC;
-            transform: translateX(10px);
+        .social-links img {
+            height: 40px;
+            width: 40px;
+            transition: transform 0.3s;
         }
-        .social-icon {
-            height: 32px;
-            width: 32px;
-            vertical-align: middle;
+        .social-links img:hover {
+            transform: scale(1.2);
         }
         footer {
-            text-align: right;
+            text-align: center;
             padding: 12px 0;
             margin-top: 40px;
             font-size: 0.8em;
@@ -224,7 +182,7 @@
             <section id="contact-intro">
                 <h2>Get in Touch</h2>
                 <p>I'm available for freelance work.<br>Have a project in mind? Let's talk.</p>
-                <p style="margin-top:30px;font-size:1.1em;">Email: <a href="mailto:darlaovens@gmail.com" style="color:#fff;text-decoration:underline;">darlaovens@gmail.com</a></p>
+                <p>Email: <a href="mailto:darlaovens@gmail.com" style="color:#fff;text-decoration:underline;">darlaovens@gmail.com</a></p>
             </section>
             <section id="contact-form">
                 <h2>Send a Message</h2>
@@ -233,48 +191,30 @@
                         Your Name:
                         <input type="text" name="name" required>
                     </label>
-
                     <label>
                         Your Email:
                         <input type="email" name="_replyto" required>
                     </label>
-
                     <label>
                         Message:
                         <textarea name="message" required></textarea>
                     </label>
-
                     <button type="submit">Send</button>
                 </form>
             </section>
+            <section id="social-media">
+                <h2>Follow Me</h2>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#" title="Instagram"><img src="instagram.png" alt="Instagram"></a>
+                    <a href="#" title="X"><img src="x.png" alt="X"></a>
+                </div>
+            </section>
         </main>
-        <section id="social-media">
-            <h2>Follow Me</h2>
-            <div class="social-links">
-                <a href="#" title="Facebook"><img src="facebook.png" alt="Facebook" class="social-icon"></a>
-                <a href="https://www.instagram.com/darla_ovens/" title="Instagram"><img src="instagram.png" alt="Instagram" class="social-icon"></a>
-                <a href="#" title="X"><img src="x.png" alt="X" class="social-icon"></a>
-            </div>
-        </section>
-        <footer id="contact">
+        <footer>
             <p>© 2025 Darla Ovens. All rights reserved.</p>
         </footer>
     </div>
-    <script>
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
 </body>
 </html>
 
