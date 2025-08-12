@@ -6,38 +6,46 @@
     <title>Contact - Darla Ovens</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
             margin: 0;
-            color: #333;
-            background-color: #fff;
+            color: #F5F5DC;
+            background: url('lux1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: auto; /* Ensure the body height adjusts dynamically */
+            overflow-y: auto; /* Enable vertical scrolling */
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
         header {
-            text-align: center;
+            text-align: right;
             padding: 80px 0 40px;
         }
         header h1 {
-            font-family: 'Lora', serif;
-            margin: 0;
+            font-family: 'Playfair Display', serif;
+            margin: 0 0 0 40px;
             font-size: 3.5em;
             font-weight: 700;
+            color: #F4E4BC;
+            text-align: left;
         }
         nav {
-            text-align: center;
+            text-align: right;
             padding: 20px 0;
             border-top: 1px solid #eee;
             border-bottom: 1px solid #eee;
         }
         nav a {
             text-decoration: none;
-            color: #333;
+            color: #F5F5DC;
             margin: 0 25px;
             font-size: 0.8em;
             letter-spacing: 0.2em;
@@ -45,77 +53,156 @@
         }
         main {
             padding: 40px 0;
-        }
-        section {
-            padding: 60px 20px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        #contact-details {
             display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            flex-wrap: wrap;
-            background-color: #f9f9f9;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-start;
+            gap: 40px;
         }
-        .contact-info {
+        #contact-intro {
             flex: 1;
-            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(30,30,30,0.5);
+            color: #F5F5DC;
+            border-radius: 16px;
+            min-width: 320px;
+            margin: 0 auto 40px auto;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            padding: 32px 24px;
+        }
+        #contact-intro h2 {
+            font-size: 2.2em;
+            font-family: 'Playfair Display', serif;
+            color: #F4E4BC;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+        #contact-intro p {
+            font-size: 1.1em;
+            color: #F5F5DC;
+            margin: 0;
+            text-align: center;
         }
         #contact-form {
-            padding: 60px 0;
-            text-align: center;
-            background-color: #fff;
+            flex: 1;
+            padding: 40px 0;
+            text-align: right;
+            background: rgba(255,255,255,0.10);
+            border-radius: 12px;
+            min-width: 350px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            margin-right: 10px;
+            margin-left: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
         #contact-form h2 {
+            text-align: center;
+            width: 100%;
             font-size: 1.5em;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             margin-bottom: 30px;
         }
         #contact-form form {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 450px;
+            width: 100%;
+            padding: 0 24px;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             gap: 15px;
+            align-items: stretch;
         }
         #contact-form input, #contact-form textarea {
-            padding: 15px;
+            padding: 12px;
             border: 1px solid #ddd;
             font-family: 'Montserrat', sans-serif;
+            background: rgba(255,255,255,0.7);
+            color: #222;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #contact-form textarea {
+            resize: vertical;
+            min-height: 80px;
         }
         #contact-form button {
-            padding: 15px;
+            padding: 12px;
             border: none;
-            background-color: #333;
+            background-color: #cfd29c;
             color: #fff;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            transition: background 0.3s, transform 0.3s;
+            font-size: 1em;
+        }
+        #contact-form button:hover {
+            background: #444;
+            transform: translateX(-10px);
         }
         #social-media {
-            background-color: #f9f9f9;
+            width: 100%;
+            background: none;
+            text-align: right; /* Align content to the right */
+            margin-top: 30px;
+        }
+        #social-media h2 {
+            font-size: 1.3em;
+            color: #F4E4BC;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 18px;
+            display: block; /* Ensure it is visible */
+            text-align: right; /* Align to the right */
+            opacity: 1; /* Make it fully visible */
+            animation: none; /* Remove animation for visibility */
+            position: relative; /* Enable positioning */
+            right: 150px; /* Move 20px to the left */
+        }
+        .social-links {
+            text-align: right; /* Ensure icons are aligned to the right */
         }
         .social-links a {
-            margin: 0 15px;
+            margin: 0 10px;
             text-decoration: none;
-            color: #333;
-            font-size: 1.2em;
+            color: #F5F5DC;
+            font-size: 2em;
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .social-links a:hover {
+            color: #F4E4BC;
+            transform: translateX(10px);
+        }
+        .social-icon {
+            height: 32px;
+            width: 32px;
+            vertical-align: middle;
         }
         footer {
-            text-align: center;
-            padding: 50px 0;
-            margin-top: 0;
-            font-size: 0.9em;
-            color: #aaa;
-            background-color: #f9f9f9;
+            text-align: right;
+            padding: 12px 0;
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #bbb;
+            background: rgba(255, 255, 255, 0);
+            border-top: 1px solid #222;
         }
     </style>
 </head>
@@ -134,21 +221,8 @@
         <main>
             <section id="contact-intro">
                 <h2>Get in Touch</h2>
-                <p>I'm available for freelance work. Have a project in mind? Let's talk.</p>
-            </section>
-            <section id="contact-details">
-                <div class="contact-info">
-                    <h3>Address</h3>
-                    <p>123 Art Street, Creativity City, 12345</p>
-                </div>
-                <div class="contact-info">
-                    <h3>Email</h3>
-                    <p>email@example.com</p>
-                </div>
-                <div class="contact-info">
-                    <h3>Phone</h3>
-                    <p>+1 234 567 890</p>
-                </div>
+                <p>I'm available for freelance work.<br>Have a project in mind? Let's talk.</p>
+                <p style="margin-top:30px;font-size:1.1em;">Email: <a href="mailto:darlaovens@gmail.com" style="color:#fff;text-decoration:underline;">darlaovens@gmail.com</a></p>
             </section>
             <section id="contact-form">
                 <h2>Send a Message</h2>
@@ -159,19 +233,17 @@
                     <button type="submit">Submit</button>
                 </form>
             </section>
-            <section id="social-media">
-                <h2>Follow Me</h2>
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">LinkedIn</a>
-                </div>
-            </section>
         </main>
+        <section id="social-media">
+            <h2>Follow Me</h2>
+            <div class="social-links">
+                <a href="#" title="Facebook"><img src="facebook.png" alt="Facebook" class="social-icon"></a>
+                <a href="#" title="Instagram"><img src="instagram.png" alt="Instagram" class="social-icon"></a>
+                <a href="#" title="X"><img src="x.png" alt="X" class="social-icon"></a>
+            </div>
+        </section>
         <footer id="contact">
-            <p>email@example.com | +1 234 567 890</p>
-            <p>© 2025 Darla Ovens</p>
+            <p>© 2025 Darla Ovens. All rights reserved.</p>
         </footer>
     </div>
     <script>
@@ -191,3 +263,4 @@
     </script>
 </body>
 </html>
+
