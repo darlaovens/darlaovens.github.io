@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Darla Ovens</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            color: #333;
+            background-color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            text-align: center;
+            padding: 80px 0 40px;
+        }
+        header h1 {
+            font-family: 'Lora', serif;
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 700;
+        }
+        nav {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 25px;
+            font-size: 0.8em;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        main {
+            padding: 40px 0;
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #contact-details {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 250px;
+        }
+        #contact-form {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #fff;
+        }
+        #contact-form h2 {
+            font-size: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 30px;
+        }
+        #contact-form form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #contact-form input, #contact-form textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            font-family: 'Montserrat', sans-serif;
+        }
+        #contact-form button {
+            padding: 15px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        #social-media {
+            background-color: #f9f9f9;
+        }
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 0;
+            font-size: 0.9em;
+            color: #aaa;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Darla Ovens</h1>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Galleries</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+        <main>
+            <section id="contact-intro">
+                <h2>Get in Touch</h2>
+                <p>I'm available for freelance work. Have a project in mind? Let's talk.</p>
+            </section>
+            <section id="contact-details">
+                <div class="contact-info">
+                    <h3>Address</h3>
+                    <p>123 Art Street, Creativity City, 12345</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <p>email@example.com</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Phone</h3>
+                    <p>+1 234 567 890</p>
+                </div>
+            </section>
+            <section id="contact-form">
+                <h2>Send a Message</h2>
+                <form action="#">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea rows="4" placeholder="Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            <section id="social-media">
+                <h2>Follow Me</h2>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </section>
+        </main>
+        <footer id="contact">
+            <p>email@example.com | +1 234 567 890</p>
+            <p>© 2025 Darla Ovens</p>
+        </footer>
+    </div>
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
